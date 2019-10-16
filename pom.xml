@@ -235,7 +235,6 @@
     <module>grpc-google-cloud-video-intelligence-v1p3beta1</module>
     <module>google-cloud-video-intelligence</module>
     <module>google-cloud-video-intelligence-bom</module>
-    <module>google-cloud-video-intelligence-bom</module>
   </modules>
 
   <reporting>
