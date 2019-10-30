@@ -10,7 +10,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-video-intelligence-parent</artifactId>
-    <version>1.0.0-beta</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+    <version>0.116.0-beta</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
   </parent>
   <dependencies>
     <dependency>
