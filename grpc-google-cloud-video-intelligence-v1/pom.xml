@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.api.grpc</groupId>
   <artifactId>grpc-google-cloud-video-intelligence-v1</artifactId>
-  <version>1.0.0</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1:current} -->
+  <version>0.116.0</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1:current} -->
   <name>grpc-google-cloud-video-intelligence-v1</name>
   <description>GRPC library for grpc-google-cloud-video-intelligence-v1</description>
   <parent>
