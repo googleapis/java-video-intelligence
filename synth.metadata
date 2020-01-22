@@ -1,5 +1,5 @@
 {
-  "updateTime": "2020-01-18T09:11:38.672890Z",
+  "updateTime": "2020-01-22T22:21:54.178214Z",
   "sources": [
     {
       "generator": {
@@ -12,8 +12,7 @@
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "7f0dab8177cf371ae019a082e2512de7ac102888",
-        "internalRef": "290326986"
+        "sha": "fead959b0dcc7b36c6ed74ebf905f5bcb3c0d521"
       }
     },
     {
@@ -91,9 +90,6 @@
     },
     {
       "path": ".github/release-please.yml"
-    },
-    {
-      "path": ".gitignore"
     },
     {
       "path": ".kokoro/build.bat"
@@ -261,12 +257,6 @@
       "path": ".kokoro/trampoline.sh"
     },
     {
-      "path": ".repo-metadata.json"
-    },
-    {
-      "path": "CHANGELOG.md"
-    },
-    {
       "path": "CODE_OF_CONDUCT.md"
     },
     {
@@ -279,16 +269,10 @@
       "path": "README.md"
     },
     {
+      "path": "__pycache__/synth.cpython-36.pyc"
+    },
+    {
       "path": "codecov.yaml"
-    },
-    {
-      "path": "google-cloud-video-intelligence-bom/pom.xml"
-    },
-    {
-      "path": "google-cloud-video-intelligence/clirr-ignored-differences.xml"
-    },
-    {
-      "path": "google-cloud-video-intelligence/pom.xml"
     },
     {
       "path": "google-cloud-video-intelligence/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceClient.java"
@@ -426,9 +410,6 @@
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceSmokeTest.java"
     },
     {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1/it/ITSystemTest.java"
-    },
-    {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1beta2/MockVideoIntelligenceService.java"
     },
     {
@@ -436,9 +417,6 @@
     },
     {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceClientTest.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1beta2/it/ITSystemTest.java"
     },
     {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/MockVideoIntelligenceService.java"
@@ -453,9 +431,6 @@
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceSmokeTest.java"
     },
     {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p1beta1/it/ITSystemTest.java"
-    },
-    {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/MockVideoIntelligenceService.java"
     },
     {
@@ -466,9 +441,6 @@
     },
     {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceSmokeTest.java"
-    },
-    {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p2beta1/it/ITSystemTest.java"
     },
     {
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/MockStreamingVideoIntelligenceService.java"
@@ -492,34 +464,16 @@
       "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/VideoIntelligenceServiceSmokeTest.java"
     },
     {
-      "path": "google-cloud-video-intelligence/src/test/java/com/google/cloud/videointelligence/v1p3beta1/it/ITSystemTest.java"
-    },
-    {
-      "path": "grpc-google-cloud-video-intelligence-v1/pom.xml"
-    },
-    {
       "path": "grpc-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/VideoIntelligenceServiceGrpc.java"
-    },
-    {
-      "path": "grpc-google-cloud-video-intelligence-v1beta2/pom.xml"
     },
     {
       "path": "grpc-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/VideoIntelligenceServiceGrpc.java"
     },
     {
-      "path": "grpc-google-cloud-video-intelligence-v1p1beta1/pom.xml"
-    },
-    {
       "path": "grpc-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/VideoIntelligenceServiceGrpc.java"
     },
     {
-      "path": "grpc-google-cloud-video-intelligence-v1p2beta1/pom.xml"
-    },
-    {
       "path": "grpc-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/VideoIntelligenceServiceGrpc.java"
-    },
-    {
-      "path": "grpc-google-cloud-video-intelligence-v1p3beta1/pom.xml"
     },
     {
       "path": "grpc-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/StreamingVideoIntelligenceServiceGrpc.java"
@@ -532,12 +486,6 @@
     },
     {
       "path": "license-checks.xml"
-    },
-    {
-      "path": "pom.xml"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1/pom.xml"
     },
     {
       "path": "proto-google-cloud-video-intelligence-v1/src/main/java/com/google/cloud/videointelligence/v1/AnnotateVideoProgress.java"
@@ -765,9 +713,6 @@
       "path": "proto-google-cloud-video-intelligence-v1/src/main/proto/google/cloud/videointelligence/v1/video_intelligence.proto"
     },
     {
-      "path": "proto-google-cloud-video-intelligence-v1beta2/pom.xml"
-    },
-    {
       "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/java/com/google/cloud/videointelligence/v1beta2/AnnotateVideoProgress.java"
     },
     {
@@ -909,9 +854,6 @@
       "path": "proto-google-cloud-video-intelligence-v1beta2/src/main/proto/google/cloud/videointelligence/v1beta2/video_intelligence.proto"
     },
     {
-      "path": "proto-google-cloud-video-intelligence-v1p1beta1/pom.xml"
-    },
-    {
       "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/java/com/google/cloud/videointelligence/v1p1beta1/AnnotateVideoProgress.java"
     },
     {
@@ -1051,9 +993,6 @@
     },
     {
       "path": "proto-google-cloud-video-intelligence-v1p1beta1/src/main/proto/google/cloud/videointelligence/v1p1beta1/video_intelligence.proto"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p2beta1/pom.xml"
     },
     {
       "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/java/com/google/cloud/videointelligence/v1p2beta1/AnnotateVideoProgress.java"
@@ -1219,12 +1158,6 @@
     },
     {
       "path": "proto-google-cloud-video-intelligence-v1p2beta1/src/main/proto/google/cloud/videointelligence/v1p2beta1/video_intelligence.proto"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/clirr-ignored-differences.xml"
-    },
-    {
-      "path": "proto-google-cloud-video-intelligence-v1p3beta1/pom.xml"
     },
     {
       "path": "proto-google-cloud-video-intelligence-v1p3beta1/src/main/java/com/google/cloud/videointelligence/v1p3beta1/AnnotateVideoProgress.java"
@@ -1546,15 +1479,6 @@
     },
     {
       "path": "samples/src/main/java/com/google/cloud/examples/videointelligence/v1p3beta1/VideoDetectLogoGcsBeta.java"
-    },
-    {
-      "path": "synth.metadata"
-    },
-    {
-      "path": "synth.py"
-    },
-    {
-      "path": "versions.txt"
     }
   ]
 }
