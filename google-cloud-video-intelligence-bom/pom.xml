@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-video-intelligence-bom</artifactId>
-  <version>0.117.0-beta</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+  <version>1.0.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
   <packaging>pom</packaging>
   <parent>
     <groupId>com.google.cloud</groupId>
@@ -74,7 +74,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-video-intelligence</artifactId>
-        <version>0.117.0-beta</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
+        <version>1.0.0</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
@@ -94,12 +94,12 @@
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>grpc-google-cloud-video-intelligence-v1</artifactId>
-        <version>0.82.0</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:grpc-google-cloud-video-intelligence-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-video-intelligence-v1</artifactId>
-        <version>0.82.0</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1:current} -->
+        <version>1.0.0</version><!-- {x-version-update:proto-google-cloud-video-intelligence-v1:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>

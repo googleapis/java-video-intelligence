@@ -4,12 +4,12 @@
 proto-google-cloud-video-intelligence-v1p3beta1:0.82.0:0.82.0
 proto-google-cloud-video-intelligence-v1beta2:0.82.0:0.82.0
 proto-google-cloud-video-intelligence-v1p1beta1:0.82.0:0.82.0
-proto-google-cloud-video-intelligence-v1:0.82.0:0.82.0
+proto-google-cloud-video-intelligence-v1:1.0.0:1.0.0
 proto-google-cloud-video-intelligence-v1p2beta1:0.82.0:0.82.0
 grpc-google-cloud-video-intelligence-v1p1beta1:0.82.0:0.82.0
 grpc-google-cloud-video-intelligence-v1beta2:0.82.0:0.82.0
-grpc-google-cloud-video-intelligence-v1:0.82.0:0.82.0
+grpc-google-cloud-video-intelligence-v1:1.0.0:1.0.0
 grpc-google-cloud-video-intelligence-v1p2beta1:0.82.0:0.82.0
 grpc-google-cloud-video-intelligence-v1p3beta1:0.82.0:0.82.0
-google-cloud-video-intelligence:0.117.0-beta:0.117.0-beta
-google-cloud-video-intelligence-bom:0.117.0-beta:0.117.0-beta
+google-cloud-video-intelligence:1.0.0:1.0.0
+google-cloud-video-intelligence-bom:1.0.0:1.0.0
