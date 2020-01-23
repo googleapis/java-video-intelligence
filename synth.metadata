@@ -266,12 +266,6 @@
       "path": "LICENSE"
     },
     {
-      "path": "README.md"
-    },
-    {
-      "path": "__pycache__/synth.cpython-36.pyc"
-    },
-    {
       "path": "codecov.yaml"
     },
     {
