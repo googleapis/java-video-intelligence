@@ -678,8 +678,7 @@ public final class TextDetectionConfig extends com.google.protobuf.GeneratedMess
      *
      * <code>repeated string language_hints = 1;</code>
      *
-     * @param index The index of the value to return.
-     * @return The bytes of the languageHints at the given index.
+     * @param value The bytes of the languageHints to add.
      */
     public com.google.protobuf.ByteString getLanguageHintsBytes(int index) {
       return languageHints_.getByteString(index);
