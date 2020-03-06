@@ -173,7 +173,10 @@ public final class ObjectTrackingAnnotation extends com.google.protobuf.Generate
   private int trackInfoCase_ = 0;
   private java.lang.Object trackInfo_;
 
-  public enum TrackInfoCase implements com.google.protobuf.Internal.EnumLite {
+  public enum TrackInfoCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     SEGMENT(3),
     TRACK_ID(5),
     TRACKINFO_NOT_SET(0);
