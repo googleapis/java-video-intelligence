@@ -289,10 +289,7 @@ public final class StreamingVideoConfig extends com.google.protobuf.GeneratedMes
   private int streamingConfigCase_ = 0;
   private java.lang.Object streamingConfig_;
 
-  public enum StreamingConfigCase
-      implements
-          com.google.protobuf.Internal.EnumLite,
-          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+  public enum StreamingConfigCase implements com.google.protobuf.Internal.EnumLite {
     SHOT_CHANGE_DETECTION_CONFIG(2),
     LABEL_DETECTION_CONFIG(3),
     EXPLICIT_CONTENT_DETECTION_CONFIG(4),
