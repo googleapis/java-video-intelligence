@@ -1,12 +1,13 @@
 {
-  "updateTime": "2020-03-10T09:16:40.154402Z",
+  "updateTime": "2020-03-10T09:36:18.694281Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "e9e90a787703ec5d388902e2cb796aaed3a385b4",
-        "internalRef": "297671458"
+        "sha": "583b7321624736e2c490e328f4b1957335779295",
+        "internalRef": "299146674",
+        "log": "583b7321624736e2c490e328f4b1957335779295\npublish v1p3beta1: update with absolute address in comments\n\nPiperOrigin-RevId: 299146674\n\n"
       }
     },
     {
