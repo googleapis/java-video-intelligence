@@ -620,7 +620,8 @@ public final class SpeechContext extends com.google.protobuf.GeneratedMessageV3
      *
      * <code>repeated string phrases = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
-     * @param value The bytes of the phrases to add.
+     * @param index The index of the value to return.
+     * @return The bytes of the phrases at the given index.
      */
     public com.google.protobuf.ByteString getPhrasesBytes(int index) {
       return phrases_.getByteString(index);

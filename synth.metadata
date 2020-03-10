@@ -1,13 +1,13 @@
 {
-  "updateTime": "2020-03-10T09:41:04.769045Z",
+  "updateTime": "2020-03-10T09:54:09.631784Z",
   "sources": [
     {
       "git": {
         "name": "googleapis",
         "remote": "https://github.com/googleapis/googleapis.git",
-        "sha": "86738c956a8238d7c77f729be78b0ed887a6c913",
-        "internalRef": "299152383",
-        "log": "86738c956a8238d7c77f729be78b0ed887a6c913\npublish v1p1beta1: update with absolute address in comments\n\nPiperOrigin-RevId: 299152383\n\n"
+        "sha": "91e1fb5ef9829c0c7a64bfa5bde330e6ed594378",
+        "internalRef": "299404145",
+        "log": "91e1fb5ef9829c0c7a64bfa5bde330e6ed594378\nchore: update protobuf (protoc) version to 3.11.2\n\nPiperOrigin-RevId: 299404145\n\n"
       }
     },
     {
