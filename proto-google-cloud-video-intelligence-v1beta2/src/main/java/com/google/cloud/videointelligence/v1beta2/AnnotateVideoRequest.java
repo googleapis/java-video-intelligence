@@ -310,7 +310,7 @@ public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMes
    * repeated .google.cloud.videointelligence.v1beta2.Feature features = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
-   * @return The count of features.
+   * @param value The features to add.
    */
   public int getFeaturesCount() {
     return features_.size();

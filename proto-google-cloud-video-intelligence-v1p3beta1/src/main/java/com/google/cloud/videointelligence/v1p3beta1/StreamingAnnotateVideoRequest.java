@@ -138,10 +138,7 @@ public final class StreamingAnnotateVideoRequest extends com.google.protobuf.Gen
   private int streamingRequestCase_ = 0;
   private java.lang.Object streamingRequest_;
 
-  public enum StreamingRequestCase
-      implements
-          com.google.protobuf.Internal.EnumLite,
-          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+  public enum StreamingRequestCase implements com.google.protobuf.Internal.EnumLite {
     VIDEO_CONFIG(1),
     INPUT_CONTENT(2),
     STREAMINGREQUEST_NOT_SET(0);
