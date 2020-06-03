@@ -49,7 +49,7 @@ public class ITSystemTest {
   @Test
   public void annotateVideoTest() throws ExecutionException, InterruptedException {
     AnnotateVideoResponse response = client.annotateVideoAsync(BUCKET_URI, FEATURE_LIST).get();
-      List<VideoAnnotationResults> videoAnnotationResults = response.getAnnotationResultsList();
+    List<VideoAnnotationResults> videoAnnotationResults = response.getAnnotationResultsList();
     for (VideoAnnotationResults result : videoAnnotationResults) {
       System.out.println(result.getSegmentLabelAnnotationsList().size());
 
