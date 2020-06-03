@@ -1,5 +1,21 @@
 # Changelog
 
+### [1.2.2](https://www.github.com/googleapis/java-video-intelligence/compare/v1.2.1...v1.2.2) (2020-06-03)
+
+
+### Bug Fixes
+
+* **generator:** delay removing streaming response until used ([#145](https://www.github.com/googleapis/java-video-intelligence/issues/145)) ([280c8e8](https://www.github.com/googleapis/java-video-intelligence/commit/280c8e814e430d9f52d38d73eada14a5ffb10f1b))
+
+
+### Dependencies
+
+* update dependency com.google.api.grpc:proto-google-common-protos to v1.18.0 ([#149](https://www.github.com/googleapis/java-video-intelligence/issues/149)) ([2350c1f](https://www.github.com/googleapis/java-video-intelligence/commit/2350c1ff6f53a257ab306332b2baf5a24fd603bb))
+* update dependency com.google.guava:guava-bom to v29 ([#127](https://www.github.com/googleapis/java-video-intelligence/issues/127)) ([ae8231a](https://www.github.com/googleapis/java-video-intelligence/commit/ae8231a9b1d0ba659988f687f4d6a264c1b946d5))
+* update dependency com.google.protobuf:protobuf-java to v3.12.0 ([#153](https://www.github.com/googleapis/java-video-intelligence/issues/153)) ([a6c1998](https://www.github.com/googleapis/java-video-intelligence/commit/a6c19987043f078ebebe547d7c30974da0e130cd))
+* update dependency io.grpc:grpc-bom to v1.29.0 ([#139](https://www.github.com/googleapis/java-video-intelligence/issues/139)) ([a659059](https://www.github.com/googleapis/java-video-intelligence/commit/a65905927826c82e7bdcca025e18021259e4dd1e))
+* update dependency org.threeten:threetenbp to v1.4.4 ([#144](https://www.github.com/googleapis/java-video-intelligence/issues/144)) ([2a342c5](https://www.github.com/googleapis/java-video-intelligence/commit/2a342c5907043bc3526977e8d82920219da91720))
+
 ### [1.2.1](https://www.github.com/googleapis/java-video-intelligence/compare/v1.2.0...v1.2.1) (2020-04-06)
 
 
