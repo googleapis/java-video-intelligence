@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.3.1](https://www.github.com/googleapis/java-video-intelligence/compare/v1.3.0...v1.3.1) (2020-06-17)
+
+
+### Dependencies
+
+* update core dependencies to v1.57.0 ([#188](https://www.github.com/googleapis/java-video-intelligence/issues/188)) ([bdd712d](https://www.github.com/googleapis/java-video-intelligence/commit/bdd712d541c45ee0a4567adff8fded04e0f719ff))
+
 ## [1.3.0](https://www.github.com/googleapis/java-video-intelligence/compare/v1.2.1...v1.3.0) (2020-06-11)
 
 
