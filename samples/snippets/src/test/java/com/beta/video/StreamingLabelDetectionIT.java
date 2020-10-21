@@ -14,12 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package com.beta.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
@@ -28,14 +26,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Integration (system) tests for {@link StreamingAutoMlClassification}. */
+/** Integration (system) tests for {@link StreamingLabelDetection}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class StreamingAutoMlClassificationIT {
-
-  private static String PROJECT_ID = "779844219229"; // System.getenv().get("GOOGLE_CLOUD_PROJECT");
-  private static String MODEL_ID = "VCN6455760532254228480";
-
+public class StreamingLabelDetectionIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -52,25 +46,10 @@ public class StreamingAutoMlClassificationIT {
   }
 
   @Test
-  public void testStreamingAutoMlClassification() {
-    // Bad Gateway sporadically occurs
-    int tryCount = 0;
-    int maxTries = 3;
-    while (tryCount < maxTries) {
-      try {
-        StreamingAutoMlClassification.streamingAutoMlClassification(
-            "resources/cat.mp4", PROJECT_ID, MODEL_ID);
-        assertThat(bout.toString()).contains("Video streamed successfully.");
+  public void testStreamingLabelDetection() {
+    StreamingLabelDetection.streamingLabelDetection("resources/cat.mp4");
+    String got = bout.toString();
 
-        break;
-      } catch (StatusRuntimeException ex) {
-        if (ex.getStatus().getCode() == Status.Code.UNAVAILABLE) {
-          assertThat(ex.getMessage()).contains("Bad Gateway");
-          tryCount++;
-        }
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
-    }
+    assertThat(got).contains("cat");
   }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2020 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package com.beta.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -23,13 +23,10 @@ import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
-/** Integration (system) tests for {@link StreamingExplicitContentDetection}. */
-@RunWith(JUnit4.class)
-@SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class StreamingExplicitContentDetectionIT {
+@SuppressWarnings("checkstyle:AbbreviationAsWordInName")
+public class DetectPersonIT {
+
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -46,10 +43,9 @@ public class StreamingExplicitContentDetectionIT {
   }
 
   @Test
-  public void testStreamingExplicitContent() {
-    StreamingExplicitContentDetection.streamingExplicitContentDetection("resources/cat.mp4");
+  public void testDetectPerson() throws Exception {
+    DetectPerson.detectPerson("resources/googlework_short.mp4");
     String got = bout.toString();
-
-    assertThat(got).contains("UNLIKELY");
+    assertThat(got).contains("Landmark");
   }
 }

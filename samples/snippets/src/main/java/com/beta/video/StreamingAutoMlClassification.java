@@ -14,31 +14,36 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package com.beta.video;
 
-// [START video_streaming_label_detection_beta]
+// [START video_streaming_automl_classification_beta]
+
 import com.google.api.gax.rpc.BidiStream;
 import com.google.cloud.videointelligence.v1p3beta1.LabelAnnotation;
 import com.google.cloud.videointelligence.v1p3beta1.LabelFrame;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse;
+import com.google.cloud.videointelligence.v1p3beta1.StreamingAutomlClassificationConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingFeature;
-import com.google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceClient;
 import com.google.protobuf.ByteString;
+import io.grpc.StatusRuntimeException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
-class StreamingLabelDetection {
+class StreamingAutoMlClassification {
 
-  // Perform streaming video label detection
-  static void streamingLabelDetection(String filePath) {
+  // Perform streaming video classification with an AutoML Model
+  static void streamingAutoMlClassification(String filePath, String projectId, String modelId)
+      throws StatusRuntimeException, IOException {
     // String filePath = "path_to_your_video_file";
+    // String projectId = "YOUR_GCP_PROJECT_ID";
+    // String modelId = "YOUR_AUTO_ML_CLASSIFICATION_MODEL_ID";
 
     try (StreamingVideoIntelligenceServiceClient client =
         StreamingVideoIntelligenceServiceClient.create()) {
@@ -49,13 +54,18 @@ class StreamingLabelDetection {
       int chunkSize = 5 * 1024 * 1024;
       int numChunks = (int) Math.ceil((double) data.length / chunkSize);
 
-      StreamingLabelDetectionConfig labelConfig =
-          StreamingLabelDetectionConfig.newBuilder().setStationaryCamera(false).build();
+      String modelPath =
+          String.format("projects/%s/locations/us-central1/models/%s", projectId, modelId);
+
+      System.out.println(modelPath);
+
+      StreamingAutomlClassificationConfig streamingAutomlClassificationConfig =
+          StreamingAutomlClassificationConfig.newBuilder().setModelName(modelPath).build();
 
       StreamingVideoConfig streamingVideoConfig =
           StreamingVideoConfig.newBuilder()
-              .setFeature(StreamingFeature.STREAMING_LABEL_DETECTION)
-              .setLabelDetectionConfig(labelConfig)
+              .setFeature(StreamingFeature.STREAMING_AUTOML_CLASSIFICATION)
+              .setAutomlClassificationConfig(streamingAutomlClassificationConfig)
               .build();
 
       BidiStream<StreamingAnnotateVideoRequest, StreamingAnnotateVideoResponse> call =
@@ -80,6 +90,11 @@ class StreamingLabelDetection {
       call.closeSend();
 
       for (StreamingAnnotateVideoResponse response : call) {
+        if (response.hasError()) {
+          System.out.println(response.getError().getMessage());
+          break;
+        }
+
         StreamingVideoAnnotationResults annotationResults = response.getAnnotationResults();
 
         for (LabelAnnotation annotation : annotationResults.getLabelAnnotationsList()) {
@@ -91,12 +106,11 @@ class StreamingLabelDetection {
               labelFrame.getTimeOffset().getSeconds() + labelFrame.getTimeOffset().getNanos() / 1e9;
           float confidence = labelFrame.getConfidence();
 
-          System.out.format("%fs: %s (%f)\n", offset, entity, confidence);
+          System.out.format("At %fs segment: %s (%f)\n", offset, entity, confidence);
         }
       }
-    } catch (IOException e) {
-      e.printStackTrace();
+      System.out.println("Video streamed successfully.");
     }
   }
 }
-// [END video_streaming_label_detection_beta]
+// [END video_streaming_automl_classification_beta]

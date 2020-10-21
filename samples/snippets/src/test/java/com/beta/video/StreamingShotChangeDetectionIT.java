@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google Inc.
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,22 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package com.beta.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-public class DetectLogoGcsTest {
+/** Integration (system) tests for {@link StreamingShotChangeDetection}. */
+@RunWith(JUnit4.class)
+@SuppressWarnings("checkstyle:abbreviationaswordinname")
+public class StreamingShotChangeDetectionIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -44,14 +46,11 @@ public class DetectLogoGcsTest {
   }
 
   @Test
-  public void testLogoDetectGcs()
-      throws IOException, ExecutionException, InterruptedException, TimeoutException {
-    LogoDetectionGcs.detectLogoGcs("gs://cloud-samples-data/video/googlework_tiny.mp4");
+  public void testStreamingShotChangeDetection() {
+    StreamingShotChangeDetection.streamingShotChangeDetection("resources/cat.mp4");
     String got = bout.toString();
 
-    assertThat(got).contains("Description");
-    assertThat(got).contains("Confidence");
-    assertThat(got).contains("Start Time Offset");
-    assertThat(got).contains("End Time Offset");
+    assertThat(got).contains("Shot: 0.0");
+    assertThat(got).contains("to 14.8");
   }
 }

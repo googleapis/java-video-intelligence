@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package com.beta.video;
 
-// [START video_detect_logo_beta]
+// [START video_detect_logo_gcs_beta]
+
 import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1p3beta1.AnnotateVideoResponse;
 import com.google.cloud.videointelligence.v1p3beta1.DetectedAttribute;
@@ -29,36 +30,27 @@ import com.google.cloud.videointelligence.v1p3beta1.Track;
 import com.google.cloud.videointelligence.v1p3beta1.VideoAnnotationResults;
 import com.google.cloud.videointelligence.v1p3beta1.VideoIntelligenceServiceClient;
 import com.google.cloud.videointelligence.v1p3beta1.VideoSegment;
-import com.google.protobuf.ByteString;
 import com.google.protobuf.Duration;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.concurrent.ExecutionException;
 
-public class DetectLogo {
+public class DetectLogoGcs {
 
   public void detectLogo() throws IOException, ExecutionException, InterruptedException {
-    String filePath = "path/to/your/video.mp4";
-    detectLogo(filePath);
+    String inputUri = "gs://cloud-samples-data/video/googlework_short.mp4";
+    detectLogoGcs(inputUri);
   }
 
-  public static void detectLogo(String localFilePath)
+  public static void detectLogoGcs(String inputUri)
       throws IOException, ExecutionException, InterruptedException {
     // Initialize client that will be used to send requests. This client only needs to be created
     // once, and can be reused for multiple requests. After completing all of your requests, call
     // the "close" method on the client to safely clean up any remaining background resources.
     try (VideoIntelligenceServiceClient client = VideoIntelligenceServiceClient.create()) {
-      // Read the files contents
-      Path path = Paths.get(localFilePath);
-      byte[] data = Files.readAllBytes(path);
-      ByteString inputContent = ByteString.copyFrom(data);
-
-      // Build the request with the inputContent and set the Feature
+      // Build the request with the inputUri and set the Feature
       AnnotateVideoRequest request =
           AnnotateVideoRequest.newBuilder()
-              .setInputContent(inputContent)
+              .setInputUri(inputUri)
               .addFeatures(Feature.LOGO_RECOGNITION)
               .build();
 
@@ -142,4 +134,4 @@ public class DetectLogo {
     }
   }
 }
-// [END video_detect_logo_beta]
+// [END video_detect_logo_gcs_beta]

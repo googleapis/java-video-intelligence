@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Google LLC
+ * Copyright 2017 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -26,10 +26,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Integration (system) tests for {@link StreamingLabelDetection}. */
+/** Tests for video analysis sample. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class StreamingLabelDetectionIT {
+public class QuickstartIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -46,10 +46,12 @@ public class StreamingLabelDetectionIT {
   }
 
   @Test
-  public void testStreamingLabelDetection() {
-    StreamingLabelDetection.streamingLabelDetection("resources/cat.mp4");
+  public void test() throws Exception {
+    QuickstartSample.main(new String[0]);
     String got = bout.toString();
 
-    assertThat(got).contains("cat");
+    // Test that the video with a cat has the whiskers label (may change).
+    assertThat(got.toUpperCase()).contains("VIDEO LABEL DESCRIPTION");
+    assertThat(got.toUpperCase()).contains("CONFIDENCE");
   }
 }

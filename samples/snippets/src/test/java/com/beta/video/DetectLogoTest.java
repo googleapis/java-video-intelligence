@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package com.beta.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -24,7 +24,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class DetectFacesGcsIT {
+public class DetectLogoTest {
+
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -41,9 +42,9 @@ public class DetectFacesGcsIT {
   }
 
   @Test
-  public void testDetectFacesGcs() throws Exception {
-    DetectFacesGcs.detectFacesGcs("gs://cloud-samples-data/video/googlework_short.mp4");
+  public void testDetectFaces() throws Exception {
+    DetectLogo.detectLogo("resources/googlework_short.mp4");
     String got = bout.toString();
-    assertThat(got).contains("Attribute");
+    assertThat(got).contains("Entity Id");
   }
 }

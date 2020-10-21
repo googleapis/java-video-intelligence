@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package com.beta.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
@@ -26,10 +28,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Integration (system) tests for {@link StreamingShotChangeDetection}. */
+/** Integration (system) tests for {@link StreamingAutoMlClassification}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class StreamingShotChangeDetectionIT {
+public class StreamingAutoMlClassificationIT {
+
+  private static String PROJECT_ID = "779844219229"; // System.getenv().get("GOOGLE_CLOUD_PROJECT");
+  private static String MODEL_ID = "VCN6455760532254228480";
+
   private ByteArrayOutputStream bout;
   private PrintStream out;
 
@@ -46,11 +52,25 @@ public class StreamingShotChangeDetectionIT {
   }
 
   @Test
-  public void testStreamingShotChangeDetection() {
-    StreamingShotChangeDetection.streamingShotChangeDetection("resources/cat.mp4");
-    String got = bout.toString();
+  public void testStreamingAutoMlClassification() {
+    // Bad Gateway sporadically occurs
+    int tryCount = 0;
+    int maxTries = 3;
+    while (tryCount < maxTries) {
+      try {
+        StreamingAutoMlClassification.streamingAutoMlClassification(
+            "resources/cat.mp4", PROJECT_ID, MODEL_ID);
+        assertThat(bout.toString()).contains("Video streamed successfully.");
 
-    assertThat(got).contains("Shot: 0.0");
-    assertThat(got).contains("to 14.8");
+        break;
+      } catch (StatusRuntimeException ex) {
+        if (ex.getStatus().getCode() == Status.Code.UNAVAILABLE) {
+          assertThat(ex.getMessage()).contains("Bad Gateway");
+          tryCount++;
+        }
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
   }
 }

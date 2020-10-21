@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package com.beta.video;
 
 // [START video_streaming_object_tracking_beta]
+
 import com.google.api.gax.rpc.BidiStream;
 import com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingAnnotation;
 import com.google.cloud.videointelligence.v1p3beta1.ObjectTrackingFrame;

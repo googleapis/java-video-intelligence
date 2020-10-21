@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package com.beta.video;
 
-// [START video_streaming_explicit_content_detection_beta]
+// [START video_streaming_shot_change_detection_beta]
+
 import com.google.api.gax.rpc.BidiStream;
-import com.google.cloud.videointelligence.v1p3beta1.ExplicitContentFrame;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoResponse;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingFeature;
@@ -26,6 +26,7 @@ import com.google.cloud.videointelligence.v1p3beta1.StreamingLabelDetectionConfi
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoAnnotationResults;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoConfig;
 import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceServiceClient;
+import com.google.cloud.videointelligence.v1p3beta1.VideoSegment;
 import com.google.protobuf.ByteString;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -33,10 +34,10 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 
-class StreamingExplicitContentDetection {
+class StreamingShotChangeDetection {
 
-  // Perform streaming video detection for explicit content
-  static void streamingExplicitContentDetection(String filePath) {
+  // Perform streaming video detection for shot changes
+  static void streamingShotChangeDetection(String filePath) {
     // String filePath = "path_to_your_video_file";
 
     try (StreamingVideoIntelligenceServiceClient client =
@@ -53,7 +54,7 @@ class StreamingExplicitContentDetection {
 
       StreamingVideoConfig streamingVideoConfig =
           StreamingVideoConfig.newBuilder()
-              .setFeature(StreamingFeature.STREAMING_EXPLICIT_CONTENT_DETECTION)
+              .setFeature(StreamingFeature.STREAMING_SHOT_CHANGE_DETECTION)
               .setLabelDetectionConfig(labelConfig)
               .build();
 
@@ -81,14 +82,14 @@ class StreamingExplicitContentDetection {
       for (StreamingAnnotateVideoResponse response : call) {
         StreamingVideoAnnotationResults annotationResults = response.getAnnotationResults();
 
-        for (ExplicitContentFrame frame :
-            annotationResults.getExplicitAnnotation().getFramesList()) {
+        for (VideoSegment segment : annotationResults.getShotAnnotationsList()) {
+          double startTimeOffset =
+              segment.getStartTimeOffset().getSeconds()
+                  + segment.getStartTimeOffset().getNanos() / 1e9;
+          double endTimeOffset =
+              segment.getEndTimeOffset().getSeconds() + segment.getEndTimeOffset().getNanos() / 1e9;
 
-          double offset =
-              frame.getTimeOffset().getSeconds() + frame.getTimeOffset().getNanos() / 1e9;
-
-          System.out.format("Offset: %f\n", offset);
-          System.out.format("\tPornography: %s", frame.getPornographyLikelihood());
+          System.out.format("Shot: %fs to %fs\n", startTimeOffset, endTimeOffset);
         }
       }
     } catch (IOException e) {
@@ -96,4 +97,4 @@ class StreamingExplicitContentDetection {
     }
   }
 }
-// [END video_streaming_explicit_content_detection_beta]
+// [END video_streaming_shot_change_detection_beta]
