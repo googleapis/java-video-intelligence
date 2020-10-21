@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc.
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
@@ -26,10 +28,14 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/** Tests for video analysis sample. */
+/** Integration (system) tests for {@link StreamingAutoMlClassification}. */
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class QuickstartIT {
+public class StreamingAutoMlClassificationIT {
+
+  private static String PROJECT_ID = "779844219229"; // System.getenv().get("GOOGLE_CLOUD_PROJECT");
+  private static String MODEL_ID = "VCN6455760532254228480";
+
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -50,12 +56,25 @@ public class QuickstartIT {
   }
 
   @Test
-  public void test() throws Exception {
-    QuickstartSample.main(new String[0]);
-    String got = bout.toString();
+  public void testStreamingAutoMlClassification() {
+    // Bad Gateway sporadically occurs
+    int tryCount = 0;
+    int maxTries = 3;
+    while (tryCount < maxTries) {
+      try {
+        StreamingAutoMlClassification.streamingAutoMlClassification(
+            "resources/cat.mp4", PROJECT_ID, MODEL_ID);
+        assertThat(bout.toString()).contains("Video streamed successfully.");
 
-    // Test that the video with a cat has the whiskers label (may change).
-    assertThat(got.toUpperCase()).contains("VIDEO LABEL DESCRIPTION");
-    assertThat(got.toUpperCase()).contains("CONFIDENCE");
+        break;
+      } catch (StatusRuntimeException ex) {
+        if (ex.getStatus().getCode() == Status.Code.UNAVAILABLE) {
+          assertThat(ex.getMessage()).contains("Bad Gateway");
+          tryCount++;
+        }
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+    }
   }
 }

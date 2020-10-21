@@ -57,6 +57,7 @@ public class DetectTextTest {
     bout = new ByteArrayOutputStream();
     out = new PrintStream(bout);
     originalPrintStream = System.out;
+    originalPrintStream = System.out;
     System.setOut(out);
   }
 

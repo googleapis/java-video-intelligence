@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google Inc.
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,22 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package beta.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-public class DetectLogoTest {
+/** Integration (system) tests for {@link StreamingObjectTracking}. */
+@RunWith(JUnit4.class)
+@SuppressWarnings("checkstyle:abbreviationaswordinname")
+public class StreamingObjectTrackingIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -48,14 +50,14 @@ public class DetectLogoTest {
   }
 
   @Test
-  public void testLogoDetect()
-      throws IOException, ExecutionException, InterruptedException, TimeoutException {
-    LogoDetection.detectLogo("resources/googlework_short.mp4");
+  public void testStreamingObjectTracking() {
+    StreamingObjectTracking.streamingObjectTracking("resources/cat.mp4");
     String got = bout.toString();
 
-    assertThat(got).contains("Description");
-    assertThat(got).contains("Confidence");
-    assertThat(got).contains("Start Time Offset");
-    assertThat(got).contains("End Time Offset");
+    assertThat(got).contains("cat");
+    assertThat(got).contains("Left: 0.1");
+    assertThat(got).contains("Top: 0.2");
+    assertThat(got).contains("Right: 0.7");
+    assertThat(got).contains("Bottom: 0.8");
   }
 }
