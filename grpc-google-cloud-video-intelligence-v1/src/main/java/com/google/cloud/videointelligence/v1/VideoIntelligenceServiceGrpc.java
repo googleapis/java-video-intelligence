@@ -22,13 +22,7 @@ import static io.grpc.stub.ClientCalls.futureUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
-/**
- *
- *
- * <pre>
- * Service that implements the Video Intelligence API.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/videointelligence/v1/video_intelligence.proto")
@@ -128,25 +122,10 @@ public final class VideoIntelligenceServiceGrpc {
     return VideoIntelligenceServiceFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service that implements the Video Intelligence API.
-   * </pre>
-   */
+  /** */
   public abstract static class VideoIntelligenceServiceImplBase implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Performs asynchronous video annotation. Progress and results can be
-     * retrieved through the `google.longrunning.Operations` interface.
-     * `Operation.metadata` contains `AnnotateVideoProgress` (progress).
-     * `Operation.response` contains `AnnotateVideoResponse` (results).
-     * </pre>
-     */
+    /** */
     public void annotateVideo(
         com.google.cloud.videointelligence.v1.AnnotateVideoRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -166,13 +145,7 @@ public final class VideoIntelligenceServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service that implements the Video Intelligence API.
-   * </pre>
-   */
+  /** */
   public static final class VideoIntelligenceServiceStub
       extends io.grpc.stub.AbstractAsyncStub<VideoIntelligenceServiceStub> {
     private VideoIntelligenceServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
@@ -185,16 +158,7 @@ public final class VideoIntelligenceServiceGrpc {
       return new VideoIntelligenceServiceStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Performs asynchronous video annotation. Progress and results can be
-     * retrieved through the `google.longrunning.Operations` interface.
-     * `Operation.metadata` contains `AnnotateVideoProgress` (progress).
-     * `Operation.response` contains `AnnotateVideoResponse` (results).
-     * </pre>
-     */
+    /** */
     public void annotateVideo(
         com.google.cloud.videointelligence.v1.AnnotateVideoRequest request,
         io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
@@ -205,13 +169,7 @@ public final class VideoIntelligenceServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service that implements the Video Intelligence API.
-   * </pre>
-   */
+  /** */
   public static final class VideoIntelligenceServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<VideoIntelligenceServiceBlockingStub> {
     private VideoIntelligenceServiceBlockingStub(
@@ -225,29 +183,14 @@ public final class VideoIntelligenceServiceGrpc {
       return new VideoIntelligenceServiceBlockingStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Performs asynchronous video annotation. Progress and results can be
-     * retrieved through the `google.longrunning.Operations` interface.
-     * `Operation.metadata` contains `AnnotateVideoProgress` (progress).
-     * `Operation.response` contains `AnnotateVideoResponse` (results).
-     * </pre>
-     */
+    /** */
     public com.google.longrunning.Operation annotateVideo(
         com.google.cloud.videointelligence.v1.AnnotateVideoRequest request) {
       return blockingUnaryCall(getChannel(), getAnnotateVideoMethod(), getCallOptions(), request);
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service that implements the Video Intelligence API.
-   * </pre>
-   */
+  /** */
   public static final class VideoIntelligenceServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<VideoIntelligenceServiceFutureStub> {
     private VideoIntelligenceServiceFutureStub(
@@ -261,16 +204,7 @@ public final class VideoIntelligenceServiceGrpc {
       return new VideoIntelligenceServiceFutureStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Performs asynchronous video annotation. Progress and results can be
-     * retrieved through the `google.longrunning.Operations` interface.
-     * `Operation.metadata` contains `AnnotateVideoProgress` (progress).
-     * `Operation.response` contains `AnnotateVideoResponse` (results).
-     * </pre>
-     */
+    /** */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
         annotateVideo(com.google.cloud.videointelligence.v1.AnnotateVideoRequest request) {
       return futureUnaryCall(

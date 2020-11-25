@@ -20,13 +20,7 @@ import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 
-/**
- *
- *
- * <pre>
- * Service that implements streaming Video Intelligence API.
- * </pre>
- */
+/** */
 @javax.annotation.Generated(
     value = "by gRPC proto compiler",
     comments = "Source: google/cloud/videointelligence/v1p3beta1/video_intelligence.proto")
@@ -136,25 +130,11 @@ public final class StreamingVideoIntelligenceServiceGrpc {
     return StreamingVideoIntelligenceServiceFutureStub.newStub(factory, channel);
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service that implements streaming Video Intelligence API.
-   * </pre>
-   */
+  /** */
   public abstract static class StreamingVideoIntelligenceServiceImplBase
       implements io.grpc.BindableService {
 
-    /**
-     *
-     *
-     * <pre>
-     * Performs video annotation with bidirectional streaming: emitting results
-     * while sending video/audio bytes.
-     * This method is only available via the gRPC API (not REST).
-     * </pre>
-     */
+    /** */
     public io.grpc.stub.StreamObserver<
             com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest>
         streamingAnnotateVideo(
@@ -178,13 +158,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service that implements streaming Video Intelligence API.
-   * </pre>
-   */
+  /** */
   public static final class StreamingVideoIntelligenceServiceStub
       extends io.grpc.stub.AbstractAsyncStub<StreamingVideoIntelligenceServiceStub> {
     private StreamingVideoIntelligenceServiceStub(
@@ -198,15 +172,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
       return new StreamingVideoIntelligenceServiceStub(channel, callOptions);
     }
 
-    /**
-     *
-     *
-     * <pre>
-     * Performs video annotation with bidirectional streaming: emitting results
-     * while sending video/audio bytes.
-     * This method is only available via the gRPC API (not REST).
-     * </pre>
-     */
+    /** */
     public io.grpc.stub.StreamObserver<
             com.google.cloud.videointelligence.v1p3beta1.StreamingAnnotateVideoRequest>
         streamingAnnotateVideo(
@@ -219,13 +185,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service that implements streaming Video Intelligence API.
-   * </pre>
-   */
+  /** */
   public static final class StreamingVideoIntelligenceServiceBlockingStub
       extends io.grpc.stub.AbstractBlockingStub<StreamingVideoIntelligenceServiceBlockingStub> {
     private StreamingVideoIntelligenceServiceBlockingStub(
@@ -240,13 +200,7 @@ public final class StreamingVideoIntelligenceServiceGrpc {
     }
   }
 
-  /**
-   *
-   *
-   * <pre>
-   * Service that implements streaming Video Intelligence API.
-   * </pre>
-   */
+  /** */
   public static final class StreamingVideoIntelligenceServiceFutureStub
       extends io.grpc.stub.AbstractFutureStub<StreamingVideoIntelligenceServiceFutureStub> {
     private StreamingVideoIntelligenceServiceFutureStub(
