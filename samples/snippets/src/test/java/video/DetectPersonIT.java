@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package video;
 
-import video.LogoDetectionGcs;
 import static com.google.common.truth.Truth.assertThat;
 
+import video.DetectPerson;
 import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 import java.io.PrintStream;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class DetectLogoGcsTest {
+@SuppressWarnings("checkstyle:AbbreviationAsWordInName")
+public class DetectPersonIT {
+
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -49,14 +48,9 @@ public class DetectLogoGcsTest {
   }
 
   @Test
-  public void testLogoDetectGcs()
-      throws IOException, ExecutionException, InterruptedException, TimeoutException {
-    LogoDetectionGcs.detectLogoGcs("gs://cloud-samples-data/video/googlework_tiny.mp4");
+  public void testDetectPerson() throws Exception {
+    DetectPerson.detectPerson("resources/googlework_short.mp4");
     String got = bout.toString();
-
-    assertThat(got).contains("Description");
-    assertThat(got).contains("Confidence");
-    assertThat(got).contains("Start Time Offset");
-    assertThat(got).contains("End Time Offset");
+    assertThat(got).contains("Landmark");
   }
 }

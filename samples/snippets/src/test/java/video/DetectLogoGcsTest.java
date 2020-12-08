@@ -1,5 +1,5 @@
 /*
- * Copyright 2017 Google Inc.
+ * Copyright 2020 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package video;
 
-import video.QuickstartSample;
+import video.LogoDetectionGcs;
 import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeoutException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
-/** Tests for video analysis sample. */
-@RunWith(JUnit4.class)
-@SuppressWarnings("checkstyle:abbreviationaswordinname")
-public class QuickstartIT {
+public class DetectLogoGcsTest {
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -51,12 +49,14 @@ public class QuickstartIT {
   }
 
   @Test
-  public void test() throws Exception {
-    QuickstartSample.main(new String[0]);
+  public void testLogoDetectGcs()
+      throws IOException, ExecutionException, InterruptedException, TimeoutException {
+    LogoDetectionGcs.detectLogoGcs("gs://cloud-samples-data/video/googlework_tiny.mp4");
     String got = bout.toString();
 
-    // Test that the video with a cat has the whiskers label (may change).
-    assertThat(got.toUpperCase()).contains("VIDEO LABEL DESCRIPTION");
-    assertThat(got.toUpperCase()).contains("CONFIDENCE");
+    assertThat(got).contains("Description");
+    assertThat(got).contains("Confidence");
+    assertThat(got).contains("Start Time Offset");
+    assertThat(got).contains("End Time Offset");
   }
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package video;
 
 import video.Detect;
 import video.TrackObjects;

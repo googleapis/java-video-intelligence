@@ -15,7 +15,7 @@
  */
 
 
-package com.example.video;
+package video;
 
 import video.TextDetection;
 import static com.google.common.truth.Truth.assertThat;

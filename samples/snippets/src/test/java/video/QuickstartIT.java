@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 Google Inc.
+ * Copyright 2017 Google Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,20 +14,23 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package video;
 
+import video.QuickstartSample;
 import static com.google.common.truth.Truth.assertThat;
 
-import video.DetectPersonGcs;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-@SuppressWarnings("checkstyle:AbbreviationAsWordInName")
-public class DetectPersonGcsIT {
-
+/** Tests for video analysis sample. */
+@RunWith(JUnit4.class)
+@SuppressWarnings("checkstyle:abbreviationaswordinname")
+public class QuickstartIT {
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
@@ -48,9 +51,12 @@ public class DetectPersonGcsIT {
   }
 
   @Test
-  public void testDetectPersonGcs() throws Exception {
-    DetectPersonGcs.detectPersonGcs("gs://cloud-samples-data/video/googlework_short.mp4");
+  public void test() throws Exception {
+    QuickstartSample.main(new String[0]);
     String got = bout.toString();
-    assertThat(got).contains("Landmark");
+
+    // Test that the video with a cat has the whiskers label (may change).
+    assertThat(got.toUpperCase()).contains("VIDEO LABEL DESCRIPTION");
+    assertThat(got.toUpperCase()).contains("CONFIDENCE");
   }
 }
