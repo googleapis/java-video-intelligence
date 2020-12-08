@@ -18,7 +18,6 @@ package video;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import video.DetectPerson;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;

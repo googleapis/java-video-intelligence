@@ -14,10 +14,8 @@
  * limitations under the License.
  */
 
-
 package video;
 
-import video.TextDetection;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.videointelligence.v1.TextAnnotation;

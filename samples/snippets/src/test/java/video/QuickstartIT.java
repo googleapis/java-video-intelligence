@@ -16,7 +16,6 @@
 
 package video;
 
-import video.QuickstartSample;
 import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;
