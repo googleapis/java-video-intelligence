@@ -16,6 +16,7 @@
 
 package com.example.video;
 
+import video.LogoDetectionGcs;
 import static com.google.common.truth.Truth.assertThat;
 
 import java.io.ByteArrayOutputStream;

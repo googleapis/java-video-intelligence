@@ -14,9 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package video;
 
-// [START video_detect_person]
+// [START video_detect_person_gcs]
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.videointelligence.v1.AnnotateVideoProgress;
@@ -33,27 +33,21 @@ import com.google.cloud.videointelligence.v1.VideoAnnotationResults;
 import com.google.cloud.videointelligence.v1.VideoContext;
 import com.google.cloud.videointelligence.v1.VideoIntelligenceServiceClient;
 import com.google.cloud.videointelligence.v1.VideoSegment;
-import com.google.protobuf.ByteString;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
-public class DetectPerson {
+public class DetectPersonGcs {
 
-  public static void detectPerson() throws Exception {
+  public static void detectPersonGcs() throws Exception {
     // TODO(developer): Replace these variables before running the sample.
-    String localFilePath = "resources/googlework_short.mp4";
-    detectPerson(localFilePath);
+    String gcsUri = "gs://cloud-samples-data/video/googlework_short.mp4";
+    detectPersonGcs(gcsUri);
   }
 
-  // Detects people in a video stored in a local file using the Cloud Video Intelligence API.
-  public static void detectPerson(String localFilePath) throws Exception {
+  // Detects people in a video stored in Google Cloud Storage using
+  // the Cloud Video Intelligence API.
+  public static void detectPersonGcs(String gcsUri) throws Exception {
     try (VideoIntelligenceServiceClient videoIntelligenceServiceClient =
         VideoIntelligenceServiceClient.create()) {
       // Reads a local video file and converts it to base64.
-      Path path = Paths.get(localFilePath);
-      byte[] data = Files.readAllBytes(path);
-      ByteString inputContent = ByteString.copyFrom(data);
 
       PersonDetectionConfig personDetectionConfig =
           PersonDetectionConfig.newBuilder()
@@ -67,20 +61,18 @@ public class DetectPerson {
 
       AnnotateVideoRequest request =
           AnnotateVideoRequest.newBuilder()
-              .setInputContent(inputContent)
+              .setInputUri(gcsUri)
               .addFeatures(Feature.PERSON_DETECTION)
               .setVideoContext(videoContext)
               .build();
 
       // Detects people in a video
-      // We get the first result because only one video is processed.
       OperationFuture<AnnotateVideoResponse, AnnotateVideoProgress> future =
           videoIntelligenceServiceClient.annotateVideoAsync(request);
 
       System.out.println("Waiting for operation to complete...");
       AnnotateVideoResponse response = future.get();
-
-      // Gets annotations for video
+      // Get the first response, since we sent only one video.
       VideoAnnotationResults annotationResult = response.getAnnotationResultsList().get(0);
 
       // Annotations for list of people detected, tracked and recognized in video.
@@ -118,4 +110,4 @@ public class DetectPerson {
     }
   }
 }
-// [END video_detect_person]
+// [END video_detect_person_gcs]

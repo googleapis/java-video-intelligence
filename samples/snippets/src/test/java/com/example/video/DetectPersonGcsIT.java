@@ -18,7 +18,7 @@ package com.example.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
-import com.example.video.DetectPersonGcs;
+import video.DetectPersonGcs;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import org.junit.After;

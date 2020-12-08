@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.video;
+package video;
 
 import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.videointelligence.v1.AnnotateVideoProgress;

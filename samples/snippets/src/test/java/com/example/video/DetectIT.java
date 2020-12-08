@@ -16,6 +16,8 @@
 
 package com.example.video;
 
+import video.Detect;
+import video.TrackObjects;
 import static com.google.common.truth.Truth.assertThat;
 
 import com.google.cloud.videointelligence.v1.VideoAnnotationResults;
