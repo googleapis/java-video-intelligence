@@ -85,7 +85,7 @@ public class StreamingVideoIntelligenceServiceClientTest {
         StreamingAnnotateVideoResponse.newBuilder()
             .setError(Status.newBuilder().build())
             .setAnnotationResults(StreamingVideoAnnotationResults.newBuilder().build())
-            .setAnnotationResultsUri("annotation_results_uri-238075757")
+            .setAnnotationResultsUri("annotationResultsUri-1486037467")
             .build();
     mockStreamingVideoIntelligenceService.addResponse(expectedResponse);
     StreamingAnnotateVideoRequest request = StreamingAnnotateVideoRequest.newBuilder().build();

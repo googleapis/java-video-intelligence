@@ -95,7 +95,7 @@ public class VideoIntelligenceServiceClientTest {
             .build();
     mockVideoIntelligenceService.addResponse(resultOperation);
 
-    String inputUri = "input_uri1707300727";
+    String inputUri = "inputUri470706498";
     List<Feature> features = new ArrayList<>();
 
     AnnotateVideoResponse actualResponse = client.annotateVideoAsync(inputUri, features).get();
@@ -119,7 +119,7 @@ public class VideoIntelligenceServiceClientTest {
     mockVideoIntelligenceService.addException(exception);
 
     try {
-      String inputUri = "input_uri1707300727";
+      String inputUri = "inputUri470706498";
       List<Feature> features = new ArrayList<>();
       client.annotateVideoAsync(inputUri, features).get();
       Assert.fail("No exception raised");
