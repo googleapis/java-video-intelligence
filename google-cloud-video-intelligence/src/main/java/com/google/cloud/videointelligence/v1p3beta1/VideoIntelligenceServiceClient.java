@@ -160,7 +160,7 @@ public class VideoIntelligenceServiceClient implements BackgroundResource {
    * `AnnotateVideoProgress` (progress). `Operation.response` contains `AnnotateVideoResponse`
    * (results).
    *
-   * @param input_uri Input video location. Currently, only [Cloud
+   * @param inputUri Input video location. Currently, only [Cloud
    *     Storage](https://cloud.google.com/storage/) URIs are supported. URIs must be specified in
    *     the following format: `gs://bucket-id/object-id` (other URI formats return
    *     [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]). For more
