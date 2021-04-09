@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.concurrent.TimeoutException;
 
+import io.grpc.StatusRuntimeException;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -53,7 +54,7 @@ public class StreamingShotChangeDetectionIT {
   }
 
   @Test
-  public void testStreamingShotChangeDetection() throws IOException, TimeoutException {
+  public void testStreamingShotChangeDetection() throws IOException, TimeoutException, StatusRuntimeException {
     StreamingShotChangeDetection.streamingShotChangeDetection("resources/cat.mp4");
     String got = bout.toString();
 
