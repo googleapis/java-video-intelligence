@@ -29,7 +29,6 @@ import com.google.cloud.videointelligence.v1p3beta1.StreamingVideoIntelligenceSe
 import com.google.cloud.videointelligence.v1p3beta1.VideoSegment;
 import com.google.protobuf.ByteString;
 import io.grpc.StatusRuntimeException;
-
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -40,7 +39,8 @@ import java.util.concurrent.TimeoutException;
 class StreamingShotChangeDetection {
 
   // Perform streaming video detection for shot changes
-  static void streamingShotChangeDetection(String filePath) throws IOException, TimeoutException, StatusRuntimeException {
+  static void streamingShotChangeDetection(String filePath)
+      throws IOException, TimeoutException, StatusRuntimeException {
     // String filePath = "path_to_your_video_file";
 
     try (StreamingVideoIntelligenceServiceClient client =
