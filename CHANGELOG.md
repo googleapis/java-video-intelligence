@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://www.github.com/googleapis/java-video-intelligence/compare/v1.7.5...v1.8.0) (2021-08-04)
+
+
+### Features
+
+* configure initial sp version ([#602](https://www.github.com/googleapis/java-video-intelligence/issues/602)) ([0dfdaa9](https://www.github.com/googleapis/java-video-intelligence/commit/0dfdaa9c004d5b90fa0cd582ff05394a7b49588a))
+
 ### [1.7.5](https://www.github.com/googleapis/java-video-intelligence/compare/v1.7.4...v1.7.5) (2021-07-22)
 
 
