@@ -33,7 +33,7 @@ import org.junit.runners.JUnit4;
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class StreamingAutoMlClassificationIT {
 
-  private static String PROJECT_ID = "779844219229"; // System.getenv().get("GOOGLE_CLOUD_PROJECT");
+  private static String PROJECT_ID = System.getenv().get("GOOGLE_CLOUD_PROJECT");
   private static String MODEL_ID = "VCN6455760532254228480";
 
   private ByteArrayOutputStream bout;
