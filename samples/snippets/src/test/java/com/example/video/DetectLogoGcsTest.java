@@ -18,12 +18,12 @@ package com.example.video;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeoutException;
-import com.google.cloud.testing.junit4.MultipleAttemptsRule;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -45,8 +45,7 @@ public class DetectLogoGcsTest {
     System.setOut(null);
   }
 
-  @Rule
-  public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
+  @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
   @Test
   public void testLogoDetectGcs()
