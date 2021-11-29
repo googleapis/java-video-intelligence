@@ -210,8 +210,7 @@ public final class VideoIntelligenceServiceProto {
     java.lang.String[] descriptorData = {
       "\n"
           + ":google/cloud/videointelligence/v1/video_intelligence.proto\022!google.cloud.video"
-          + "intelligence.v1\032\034google/api/annotations."
-          + "proto\032\027google/api/client.proto\032\037google/api/field_behavior.proto\032#google/longrunning/operations.proto\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\376\001\n"
+          + "intelligence.v1\032\034google/api/annotations.proto\032\027google/api/client.proto\032\037google/api/field_behavior.proto\032#google/longrunning/operations.proto\032\036google/protobuf/duration.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\376\001\n"
           + "\024AnnotateVideoRequest\022\021\n"
           + "\tinput_uri\030\001 \001(\t\022\025\n\r"
           + "input_content\030\006 \001(\014\022A\n"
