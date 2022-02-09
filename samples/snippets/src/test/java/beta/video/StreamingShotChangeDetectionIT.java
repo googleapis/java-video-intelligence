@@ -35,12 +35,11 @@ import org.junit.runners.JUnit4;
 @RunWith(JUnit4.class)
 @SuppressWarnings("checkstyle:abbreviationaswordinname")
 public class StreamingShotChangeDetectionIT {
+  @Rule public final MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
   private ByteArrayOutputStream bout;
   private PrintStream out;
   private PrintStream originalPrintStream;
-
-  @Rule public final MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
   @Before
   public void setUp() {
