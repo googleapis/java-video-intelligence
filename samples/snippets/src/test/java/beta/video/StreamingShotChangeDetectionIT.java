@@ -40,6 +40,8 @@ public class StreamingShotChangeDetectionIT {
   private PrintStream out;
   private PrintStream originalPrintStream;
 
+  @Rule public final MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
+
   @Before
   public void setUp() {
     bout = new ByteArrayOutputStream();
@@ -54,8 +56,6 @@ public class StreamingShotChangeDetectionIT {
     System.out.flush();
     System.setOut(originalPrintStream);
   }
-
-  @Rule public MultipleAttemptsRule multipleAttemptsRule = new MultipleAttemptsRule(3);
 
   @Test
   public void testStreamingShotChangeDetection()
