@@ -84,11 +84,12 @@ class StreamingObjectTracking {
       call.closeSend();
 
       for (StreamingAnnotateVideoResponse response : call) {
-
-        System.out.println(call);
-
         StreamingVideoAnnotationResults annotationResults = response.getAnnotationResults();
-
+        if (response.hasError()) {
+          System.out.println(response.getError().getMessage());
+          System.out.format(
+              "Error was occured with the following status: %s\n", response.getError());
+        }
         for (ObjectTrackingAnnotation objectAnnotations :
             annotationResults.getObjectAnnotationsList()) {
 
