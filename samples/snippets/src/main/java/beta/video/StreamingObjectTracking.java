@@ -85,12 +85,27 @@ class StreamingObjectTracking {
 
       for (StreamingAnnotateVideoResponse response : call) {
         StreamingVideoAnnotationResults annotationResults = response.getAnnotationResults();
-        if (response.hasError()) {
-          System.out.println(response.getError().getMessage());
-          System.out.format(
-              "Error was occured with the following status: %s\n", response.getError());
+
+        for (ObjectTrackingAnnotation objectAnnotations :
+            annotationResults.getObjectAnnotationsList()) {
+
+          String entity = objectAnnotations.getEntity().getDescription();
+          float confidence = objectAnnotations.getConfidence();
+          long trackId = objectAnnotations.getTrackId();
+          System.out.format("%s: %f (ID: %d)\n", entity, confidence, trackId);
+
+          // In streaming, there is always one frame.
+          ObjectTrackingFrame frame = objectAnnotations.getFrames(0);
+          double offset =
+              frame.getTimeOffset().getSeconds() + frame.getTimeOffset().getNanos() / 1e9;
+          System.out.format("Offset: %f\n", offset);
+
+          System.out.println("Bounding Box:");
+          System.out.format("\tLeft: %f\n", frame.getNormalizedBoundingBox().getLeft());
+          System.out.format("\tTop: %f\n", frame.getNormalizedBoundingBox().getTop());
+          System.out.format("\tRight: %f\n", frame.getNormalizedBoundingBox().getRight());
+          System.out.format("\tBottom: %f\n", frame.getNormalizedBoundingBox().getBottom());
         }
-          
       }
     }
   }
