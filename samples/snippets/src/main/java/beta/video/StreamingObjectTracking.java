@@ -84,6 +84,9 @@ class StreamingObjectTracking {
       call.closeSend();
 
       for (StreamingAnnotateVideoResponse response : call) {
+
+        System.out.println(call);
+
         StreamingVideoAnnotationResults annotationResults = response.getAnnotationResults();
 
         for (ObjectTrackingAnnotation objectAnnotations :
