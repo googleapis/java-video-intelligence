@@ -98,6 +98,22 @@ import javax.annotation.Generated;
  *     StreamingVideoIntelligenceServiceClient.create(streamingVideoIntelligenceServiceSettings);
  * }</pre>
  *
+ * <p>To use REST (HTTP1.1/JSON) transport (instead of gRPC) for sending and receiving requests over
+ * the wire:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated for illustrative purposes only.
+ * // It may require modifications to work in your environment.
+ * StreamingVideoIntelligenceServiceSettings streamingVideoIntelligenceServiceSettings =
+ *     StreamingVideoIntelligenceServiceSettings.newBuilder()
+ *         .setTransportChannelProvider(
+ *             StreamingVideoIntelligenceServiceSettings.defaultHttpJsonTransportProviderBuilder()
+ *                 .build())
+ *         .build();
+ * StreamingVideoIntelligenceServiceClient streamingVideoIntelligenceServiceClient =
+ *     StreamingVideoIntelligenceServiceClient.create(streamingVideoIntelligenceServiceSettings);
+ * }</pre>
+ *
  * <p>Please refer to the GitHub repository's samples for more quickstart code snippets.
  */
 @BetaApi
@@ -126,7 +142,6 @@ public class StreamingVideoIntelligenceServiceClient implements BackgroundResour
    * making calls. This is for advanced usage - prefer using
    * create(StreamingVideoIntelligenceServiceSettings).
    */
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public static final StreamingVideoIntelligenceServiceClient create(
       StreamingVideoIntelligenceServiceStub stub) {
     return new StreamingVideoIntelligenceServiceClient(stub);
@@ -144,7 +159,6 @@ public class StreamingVideoIntelligenceServiceClient implements BackgroundResour
         ((StreamingVideoIntelligenceServiceStubSettings) settings.getStubSettings()).createStub();
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   protected StreamingVideoIntelligenceServiceClient(StreamingVideoIntelligenceServiceStub stub) {
     this.settings = null;
     this.stub = stub;
@@ -154,7 +168,6 @@ public class StreamingVideoIntelligenceServiceClient implements BackgroundResour
     return settings;
   }
 
-  @BetaApi("A restructuring of stub classes is planned, so this may break in the future")
   public StreamingVideoIntelligenceServiceStub getStub() {
     return stub;
   }

@@ -1,5 +1,45 @@
 # Changelog
 
+## [2.2.1](https://github.com/googleapis/java-video-intelligence/compare/v2.2.0...v2.2.1) (2022-07-01)
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.8.1 ([#923](https://github.com/googleapis/java-video-intelligence/issues/923)) ([96c6352](https://github.com/googleapis/java-video-intelligence/commit/96c635201497b1b149637e01762c6fc8d821462d))
+
+## [2.2.0](https://github.com/googleapis/java-video-intelligence/compare/v2.1.0...v2.2.0) (2022-07-01)
+
+
+### Features
+
+* Enable REST transport for most of Java and Go clients ([#920](https://github.com/googleapis/java-video-intelligence/issues/920)) ([808c131](https://github.com/googleapis/java-video-intelligence/commit/808c131cd11cdfeaa2a63073dad2977646cd30ef))
+
+
+### Bug Fixes
+
+* update gapic-generator-java with mock service generation fixes ([#922](https://github.com/googleapis/java-video-intelligence/issues/922)) ([b1d854d](https://github.com/googleapis/java-video-intelligence/commit/b1d854d364902a3b30ec204ff9909ad04af15b16))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.8.0 ([#918](https://github.com/googleapis/java-video-intelligence/issues/918)) ([4b84302](https://github.com/googleapis/java-video-intelligence/commit/4b84302d2a90a6f9b4f944e3955d3f4a8174a969))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.13.0 ([#919](https://github.com/googleapis/java-video-intelligence/issues/919)) ([6edfbd3](https://github.com/googleapis/java-video-intelligence/commit/6edfbd34a3931c608c2b51deb00381c963202ac8))
+* update dependency com.google.cloud:google-cloud-storage to v2.7.0 ([#912](https://github.com/googleapis/java-video-intelligence/issues/912)) ([5d4ed30](https://github.com/googleapis/java-video-intelligence/commit/5d4ed304c0b4da5caf40c0469284b2338694441a))
+
+## [2.1.0](https://github.com/googleapis/java-video-intelligence/compare/v2.0.27...v2.1.0) (2022-05-19)
+
+
+### Features
+
+* add build scripts for native image testing in Java 17 ([#1440](https://github.com/googleapis/java-video-intelligence/issues/1440)) ([#908](https://github.com/googleapis/java-video-intelligence/issues/908)) ([cadb24e](https://github.com/googleapis/java-video-intelligence/commit/cadb24ef6cf58cac4a2ff2d18ba7d44ac58f334b))
+* field ObjectTrackingAnnotation.segment moved into oneof, added track_id ([#897](https://github.com/googleapis/java-video-intelligence/issues/897)) ([95aa623](https://github.com/googleapis/java-video-intelligence/commit/95aa6234261d642aebd876d57a052dc125be3366))
+
+
+### Dependencies
+
+* update dependency com.google.cloud:google-cloud-core to v2.7.1 ([#906](https://github.com/googleapis/java-video-intelligence/issues/906)) ([3d548c0](https://github.com/googleapis/java-video-intelligence/commit/3d548c0d4273ed9e4860df81e36b5463b9d120d1))
+* update dependency com.google.cloud:google-cloud-shared-dependencies to v2.12.0 ([#907](https://github.com/googleapis/java-video-intelligence/issues/907)) ([0c06c94](https://github.com/googleapis/java-video-intelligence/commit/0c06c9477326331f430ef0720533671875902c64))
+
 ### [2.0.27](https://github.com/googleapis/java-video-intelligence/compare/v2.0.26...v2.0.27) (2022-04-21)
 
 
