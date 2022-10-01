@@ -65,13 +65,13 @@ implementation 'com.google.cloud:google-cloud-video-intelligence'
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.cloud:google-cloud-video-intelligence:2.2.9'
+implementation 'com.google.cloud:google-cloud-video-intelligence:2.2.10'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-video-intelligence" % "2.2.9"
+libraryDependencies += "com.google.cloud" % "google-cloud-video-intelligence" % "2.2.10"
 ```
 
 ## Authentication
